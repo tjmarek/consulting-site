@@ -1,1 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Client Testimonials | [Consultant Name]</title>
+    <meta
+      name="description"
+      content="What clients say about working with [Consultant Name] on strategy, operations, and growth."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper navbar">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-logo"></div>
+          <span>[Practice Name]</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="work-with-me.html">Work with me</a>
+        </nav>
+        <a href="work-with-me.html" class="nav-cta">Book a consultation</a>
+      </div>
+    </header>
 
+    <main>
+      <section class="wrapper section">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Testimonials</div>
+            <h1 class="section-title">What clients say.</h1>
+          </div>
+          <p class="section-description">
+            Use this page to feature short, specific quotes that highlight the
+            kind of problems she solves and the outcomes she helps create.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-tag">Founder, B2B services</div>
+            <h2 class="card-title">“We finally have a clear plan.”</h2>
+            <p class="card-body">
+              “Before working together, our roadmap lived in 10 different docs.
+              Now everyone knows what we’re doing, why, and who owns it.”
+            </p>
+            <p class="card-footnote">You’ll replace this with a real client quote.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-tag">COO, SaaS</div>
+            <h2 class="card-title">“Our meetings are actually useful now.”</h2>
+            <p class="card-body">
+              “We cut standing meetings in half and still get more done because
+              we’re making decisions instead of just sharing updates.”
+            </p>
+            <p class="card-footnote">Another placeholder testimonial.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-tag">CEO, agency</div>
+            <h2 class="card-title">“It feels calmer and more in control.”</h2>
+            <p class="card-body">
+              “The biggest change isn’t just revenue—it’s that I’m not guessing
+              all the time about what we should do next.”
+            </p>
+            <p class="card-footnote">Swap this for a real client later.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrapper">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="work-with-me.html">Work with me</a>
+        </div>
+        <div>© <span id="year"></span> [Consultant Name]. All rights reserved.</div>
+      </div>
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>
