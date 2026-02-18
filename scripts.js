@@ -57,4 +57,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Scroll reveal for premium-feel sections
+  const revealElements = document.querySelectorAll(
+    ".hero, .section, .stat-card, .card, .inline-strip, .two-column"
+  );
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  revealElements.forEach((el) => {
+    el.classList.add("reveal");
+    revealObserver.observe(el);
+  });
 });
