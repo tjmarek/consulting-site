@@ -1,1 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Services | [Consultant Name]</title>
+    <meta
+      name="description"
+      content="Consulting services designed for founders and leadership teams who want clarity, focus, and sustainable growth."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper navbar">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-logo"></div>
+          <span>[Practice Name]</span>
+        </a>
+        <nav class="nav-links">
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="work-with-me.html">Work with me</a>
+        </nav>
+        <a href="work-with-me.html" class="nav-cta">Book a consultation</a>
+      </div>
+    </header>
 
+    <main>
+      <section class="wrapper section">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Services</div>
+            <h1 class="section-title">Ways we can work together.</h1>
+          </div>
+          <p class="section-description">
+            Each engagement is scoped around a clear outcome, timeline, and
+            decision-maker. Here’s what that typically looks like.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-tag">90-day engagement</div>
+            <h2 class="card-title">Clarity sprint</h2>
+            <p class="card-body">
+              A focused 90-day engagement to align leadership, define priorities,
+              and turn scattered ideas into a practical, accountable roadmap.
+            </p>
+            <p class="card-footnote">Includes working sessions, roadmap, and follow-up.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-tag">Audit</div>
+            <h2 class="card-title">Revenue operations review</h2>
+            <p class="card-body">
+              A structured review of your funnel, handoffs, systems, and metrics
+              to surface bottlenecks and quick wins for growth.
+            </p>
+            <p class="card-footnote">Deliverable: written findings and prioritized actions.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-tag">Advisory</div>
+            <h2 class="card-title">Fractional leadership</h2>
+            <p class="card-body">
+              Part-time strategic support to help you make better decisions,
+              pressure-test initiatives, and keep your roadmap on track.
+            </p>
+            <p class="card-footnote">Limited availability; monthly retainer.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrapper section">
+        <div class="two-column">
+          <div>
+            <div class="section-kicker">Outcomes</div>
+            <h2 class="section-title">What clients usually walk away with.</h2>
+          </div>
+          <div>
+            <ul class="bullet-list">
+              <li>Aligned leadership and a shared, realistic view of priorities.</li>
+              <li>A concrete 90-day roadmap with owners and metrics.</li>
+              <li>Clarity on which initiatives to stop, not just what to start.</li>
+              <li>A cleaner operating rhythm for decision-making and execution.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrapper section">
+        <div class="two-column">
+          <div>
+            <div class="section-kicker">Next step</div>
+            <h2 class="section-title">Start with a conversation.</h2>
+            <p class="section-description">
+              We’ll use a short call to understand your context, goals, and
+              whether my approach fits what you need.
+            </p>
+          </div>
+          <div>
+            <a href="work-with-me.html" class="btn-primary">Book a consultation</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrapper">
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="work-with-me.html">Work with me</a>
+        </div>
+        <div>© <span id="year"></span> [Consultant Name]. All rights reserved.</div>
+      </div>
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>
