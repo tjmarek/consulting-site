@@ -1,1 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Book a Consultation | [Consultant Name]</title>
+    <meta
+      name="description"
+      content="Schedule a consultation with [Consultant Name] to discuss your goals, challenges, and whether there’s a fit to work together."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper navbar">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-logo"></div>
+          <span>[Practice Name]</span>
+        </a>
+        <nav class="nav-links">
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="work-with-me.html">Work with me</a>
+        </nav>
+        <a href="work-with-me.html" class="nav-cta">Book a consultation</a>
+      </div>
+    </header>
 
+    <main>
+      <section class="wrapper section">
+        <div class="two-column">
+          <div>
+            <div class="section-kicker">Work with me</div>
+            <h1 class="section-title">Let’s explore whether it’s a fit.</h1>
+            <p class="section-description">
+              This call is about understanding your context, not a hard pitch.
+              If I’m not the right person, I’ll tell you plainly.
+            </p>
+            <ul class="bullet-list">
+              <li>30–45 minute video call.</li>
+              <li>We’ll review your goals, constraints, and current roadmap.</li>
+              <li>We’ll decide together whether it makes sense to proceed.</li>
+            </ul>
+          </div>
+          <div>
+            <!-- Calendly inline embed -->
+            <!-- Replace data-url with her actual Calendly scheduling link -->
+            <div
+              class="calendly-inline-widget"
+              data-url="https://calendly.com/YOUR-CALENDLY-URL"
+              style="min-width: 320px; height: 630px;"
+            ></div>
+            <script
+              type="text/javascript"
+              src="https://assets.calendly.com/assets/external/widget.js"
+              async
+            ></script>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrapper">
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="work-with-me.html">Work with me</a>
+        </div>
+        <div>© <span id="year"></span> [Consultant Name]. All rights reserved.</div>
+      </div>
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>
