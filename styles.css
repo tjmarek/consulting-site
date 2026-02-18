@@ -20,7 +20,7 @@ body {
   background-color: #f5f5f7;
   color: #111827;
   line-height: 1.6;
-  padding-left: 5px;  /* small guard so content never touches window edge */
+  padding-left: 5px;
   padding-right: 5px;
 }
 
@@ -35,6 +35,7 @@ body {
 header {
   background-color: #f5f5f7;
   border-bottom: 1px solid #e5e7eb;
+  backdrop-filter: blur(8px);
 }
 
 /* NAV */
@@ -58,7 +59,9 @@ header {
   width: 32px;
   height: 32px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #111827, #4b5563);
+  background: radial-gradient(circle at 30% 30%, #f9fafb, #111827);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  transform: translateZ(0);
 }
 
 .nav-brand span {
@@ -74,13 +77,30 @@ header {
 }
 
 .nav-links a {
+  position: relative;
   text-decoration: none;
   color: #4b5563;
   font-size: 0.95rem;
+  transition: color 0.18s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 0;
+  height: 1px;
+  background-color: #111827;
+  transition: width 0.2s ease;
 }
 
 .nav-links a:hover {
   color: #111827;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .nav-cta {
@@ -90,11 +110,16 @@ header {
   text-decoration: none;
   color: #111827;
   font-size: 0.9rem;
+  transition: background-color 0.18s ease, color 0.18s ease,
+    box-shadow 0.18s ease, transform 0.12s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .nav-cta:hover {
   background-color: #111827;
   color: #f9fafb;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.2);
+  transform: translateY(-1px);
 }
 
 /* MOBILE NAV TOGGLE (HAMBURGER) */
@@ -111,6 +136,12 @@ header {
   background-color: #ffffff;
   padding: 0;
   cursor: pointer;
+  transition: box-shadow 0.18s ease, transform 0.12s ease;
+}
+
+.nav-toggle:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
 }
 
 .nav-toggle span {
@@ -144,13 +175,15 @@ header {
   gap: 0.5rem;
   padding: 0.75rem 1.5rem 1.25rem;
   border-bottom: 1px solid #e5e7eb;
-  background-color: #f9fafb;
+  background-color: rgba(249, 250, 251, 0.98);
+  backdrop-filter: blur(10px);
 }
 
 .nav-mobile a {
   text-decoration: none;
   color: #111827;
   font-size: 0.95rem;
+  padding: 0.3rem 0;
 }
 
 .nav-mobile a:hover {
@@ -218,10 +251,29 @@ header {
   border: none;
   text-decoration: none;
   font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  transition: background-color 0.18s ease, box-shadow 0.18s ease,
+    transform 0.12s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.btn-primary::after {
+  content: "→";
+  font-size: 0.9rem;
+  transition: transform 0.12s ease;
 }
 
 .btn-primary:hover {
   background-color: #000000;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.28);
+  transform: translateY(-1px);
+}
+
+.btn-primary:hover::after {
+  transform: translateX(2px);
 }
 
 .btn-secondary {
@@ -232,10 +284,28 @@ header {
   border: 1px solid #d1d5db;
   text-decoration: none;
   font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  transition: border-color 0.18s ease, background-color 0.18s ease,
+    transform 0.12s ease;
+}
+
+.btn-secondary::after {
+  content: "↗";
+  font-size: 0.85rem;
+  transition: transform 0.12s ease;
 }
 
 .btn-secondary:hover {
   border-color: #9ca3af;
+  background-color: #f3f4f6;
+  transform: translateY(-1px);
+}
+
+.btn-secondary:hover::after {
+  transform: translateX(1px) translateY(-1px);
 }
 
 .hero-footnote {
@@ -248,6 +318,13 @@ header {
   border-radius: 1.5rem;
   padding: 2rem;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  transform: translateY(0);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.12);
 }
 
 .hero-headshot {
@@ -314,6 +391,35 @@ header {
   border-radius: 1.25rem;
   padding: 1.5rem;
   border: 1px solid #e5e7eb;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: box-shadow 0.18s ease, transform 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(148, 163, 184, 0.25),
+    transparent 60%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+.card:hover {
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+  transform: translateY(-3px);
+  border-color: #d1d5db;
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card-title {
@@ -330,6 +436,7 @@ header {
   font-size: 0.75rem;
   color: #6b7280;
   margin-bottom: 0.75rem;
+  background-color: #f9fafb;
 }
 
 .card-body {
@@ -378,6 +485,13 @@ ul.bullet-list li + li {
   padding: 1.5rem;
   border: 1px solid #e5e7eb;
   text-align: left;
+  transform: translateY(0);
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
 }
 
 .stat-value {
@@ -403,6 +517,7 @@ ul.bullet-list li + li {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
 }
 
 .inline-strip-text {
@@ -434,10 +549,35 @@ footer {
 .footer-links a {
   color: #6b7280;
   text-decoration: none;
+  position: relative;
 }
 
-.footer-links a:hover {
-  color: #111827;
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 0;
+  height: 1px;
+  background-color: #6b7280;
+  transition: width 0.18s ease;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* SCROLL REVEAL BASE CLASS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* RESPONSIVE */
@@ -452,7 +592,6 @@ footer {
     gap: 0.75rem;
   }
 
-  /* On mobile: hide desktop nav, show hamburger, move CTA into mobile menu */
   .nav-links,
   .nav-cta {
     display: none;
@@ -572,4 +711,12 @@ footer {
   }
 }
 
-
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
