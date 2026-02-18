@@ -394,32 +394,17 @@ header {
   position: relative;
   overflow: hidden;
   transform: translateY(0);
-  transition: box-shadow 0.18s ease, transform 0.18s ease,
-    border-color 0.18s ease;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
 }
 
+/* remove the inner glow effect */
 .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at top left,
-    rgba(148, 163, 184, 0.25),
-    transparent 60%
-  );
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.18s ease;
+  content: none;
 }
 
 .card:hover {
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
-  transform: translateY(-2px);
-  border-color: #d1d5db;
-}
-
-.card:hover::before {
-  opacity: 1;
+  background-color: #f9fafb;
+  border-color: #dde1e7;
 }
 
 .card-title {
@@ -486,12 +471,12 @@ ul.bullet-list li + li {
   border: 1px solid #e5e7eb;
   text-align: left;
   transform: translateY(0);
-  transition: box-shadow 0.18s ease, transform 0.18s ease;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
 }
 
 .stat-card:hover {
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.1);
-  transform: translateY(-2px);
+  background-color: #f9fafb;
+  border-color: #dde1e7;
 }
 
 .stat-value {
