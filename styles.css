@@ -20,6 +20,8 @@ body {
   background-color: #f5f5f7;
   color: #111827;
   line-height: 1.6;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 /* Layout */
@@ -28,6 +30,12 @@ body {
   max-width: 1120px;
   margin: 0 auto;
   padding: 1.5rem;
+}
+
+/* Prevent content from ever touching the browser edge */
+body {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 header {
@@ -372,18 +380,45 @@ footer {
 
 /* RESPONSIVE */
 
-/* Small phones and very narrow screens */
-@media (max-width: 480px) {
+/* Mobile: up to 767px */
+@media (max-width: 767px) {
   .wrapper {
     padding: 1rem;
   }
 
+  .navbar {
+    gap: 0.75rem;
+  }
+
+  /* Keep desktop nav hidden for now on small screens */
+  .nav-links {
+    display: none;
+  }
+
   .hero {
-    padding-top: 2rem;
+    grid-template-columns: 1fr;
+    padding: 2.5rem 0 2rem;
   }
 
   .hero-title {
-    font-size: 1.9rem;
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+  }
+
+  .card-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .inline-strip {
+    align-items: flex-start;
   }
 
   .btn-primary,
@@ -393,47 +428,16 @@ footer {
   }
 }
 
-/* Large phones / small tablets (portrait) */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Tablet: 768px to 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
   .wrapper {
-    padding: 1.25rem;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 2.5rem 0 2rem;
-  }
-
-  .hero-title {
-    font-size: 2.1rem;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .two-column {
-    grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .inline-strip {
-    align-items: flex-start;
-  }
-}
-
-/* Tablets / small laptops (landscape tablets, narrow windows) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .wrapper {
-    padding: 1.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .hero {
     grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-    gap: 2.25rem;
+    gap: 2rem;
     padding: 3rem 0 2.5rem;
   }
 
@@ -460,8 +464,8 @@ footer {
   }
 }
 
-/* Medium to large desktops (wider windows) */
-@media (min-width: 1025px) {
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
   .wrapper {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -480,4 +484,5 @@ footer {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
 
